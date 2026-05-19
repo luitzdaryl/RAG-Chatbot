@@ -1,0 +1,19 @@
+embedding_model: "hf.co/CompendiumLabs/bge-base-en-v1.5-gguf:latest"
+language_model: "ministral-3:3b"
+
+dataset_path: "./dataset/knowledge.txt"
+
+top_k: 3
+similarity_threshold: 0.45
+
+
+system_prompt: |
+  You are a helpful AI assistant.
+
+  Answer the user's question using ONLY the retrieved context below.
+
+  If the answer cannot be found in the context, say:
+  "I could not find the answer in the provided knowledge base."
+
+  Retrieved Context:
+  {context}
